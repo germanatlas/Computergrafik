@@ -19,13 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions01.h" />
-    <ClInclude Include="functions02.h" />
+    <ClInclude Include="functions03.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\resources\src\glad.c" />
-    <ClCompile Include="main01.cpp" />
-    <ClCompile Include="main02.cpp" />
+    <ClCompile Include="main03.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fragment_shader.fs" />
+    <None Include="vertex_shader.vs" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "functions01.h"
 
-int main01() {
+int main() {
     int test_array[5] = { 1,2,3,4,5 };
 
     helloworld();
