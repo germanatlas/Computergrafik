@@ -16,76 +16,7 @@ public:
 
 	void refresh() {
 
-		std::string vCode, fCode;
-		std::ifstream vsFile, fsFile;
-
-		try
-		{
-			vsFile.open(vertexPathShader);
-			fsFile.open(fragmentPathShader);
-
-			std::stringstream vsStream, fsStream;
-
-			vsStream << vsFile.rdbuf();
-			fsStream << fsFile.rdbuf();
-
-			vsFile.close();
-			fsFile.close();
-
-			vCode = vsStream.str();
-			fCode = fsStream.str();
-
-		}
-		catch (const std::exception&)
-		{
-			std::cout << "Error: File could not be read" << std::endl;
-		}
-
-		const char* vShaderCode = vCode.c_str();
-		const char* fShaderCode = fCode.c_str();
-
-
-		// 2. compile shaders
-		unsigned int vertex, fragment;
-		int success;
-		char infoLog[512];
-		// vertex Shader
-		vertex = glCreateShader(GL_VERTEX_SHADER);
-		glShaderSource(vertex, 1, &vShaderCode, NULL);
-		glCompileShader(vertex);
-		// print compile errors if any
-		glGetShaderiv(vertex, GL_COMPILE_STATUS, &success);
-		if (!success)
-		{
-			glGetShaderInfoLog(vertex, 512, NULL, infoLog);
-			std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
-		};
-		// fragment Shader
-		fragment = glCreateShader(GL_FRAGMENT_SHADER);
-		glShaderSource(fragment, 1, &fShaderCode, NULL);
-		glCompileShader(fragment);
-		// print compile errors if any
-		glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
-		if (!success)
-		{
-			glGetShaderInfoLog(fragment, 512, NULL, infoLog);
-			std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
-		};
-
-		// shader Program
-		this->ID = glCreateProgram();
-		glAttachShader(this->ID, vertex);
-		glAttachShader(this->ID, fragment);
-		glLinkProgram(this->ID);
-		// print linking errors if any
-		glGetProgramiv(this->ID, GL_LINK_STATUS, &success); if (!success)
-		{
-			glGetProgramInfoLog(this->ID, 512, NULL, infoLog);
-			std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
-		}
-		// delete the shaders as they抮e linked into our program now and no longer necessery 
-		glDeleteShader(vertex);
-		glDeleteShader(fragment);
+		init(vertexPathShader, fragmentPathShader);
 
 	}
 
@@ -187,33 +118,27 @@ public:
 int offset_X = 0;
 int offset_Y = 0;
 void processInput(GLFWwindow* window, Shader& shaderProgram) {
+	shaderProgram.setInt("offset_X", offset_X);
+	shaderProgram.setInt("offset_Y", offset_Y);
 
 	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) {
 		shaderProgram.refresh();
 	}
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
 		offset_Y++;
-		shaderProgram.setInt("offset_Y", offset_Y);
 		std::cout << offset_X << " " << offset_Y << std::endl;
-		shaderProgram.refresh();
 	}
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
 		offset_X--;
-		shaderProgram.setInt("offset_X", offset_X);
 		std::cout << offset_X << " " << offset_Y << std::endl;
-		shaderProgram.refresh();
 	}
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
 		offset_Y--;
-		shaderProgram.setInt("offset_Y", offset_Y);
 		std::cout << offset_X << " " << offset_Y << std::endl;
-		shaderProgram.refresh();
 	}
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
 		offset_X++;
-		shaderProgram.setInt("offset_X", offset_X);
 		std::cout << offset_X << " " << offset_Y << std::endl;
-		shaderProgram.refresh();
 	}
 }
 
