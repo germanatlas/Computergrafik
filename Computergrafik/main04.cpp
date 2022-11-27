@@ -33,6 +33,9 @@ int main()
 	//load texture to shader
 	loadTexture(ourShader);
 
+	glBindVertexArray(VAO);
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
 
 	while (!glfwWindowShouldClose(window)) {
 		// use Shader

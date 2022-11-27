@@ -95,8 +95,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\ederc\source\repos\resources\include</IncludePath>
-    <LibraryPath>C:\Users\ederc\source\repos\resources\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\ederc\source\repos\resources\include;C:\Users\maxim\source\repos\resources\include</IncludePath>
+    <LibraryPath>C:\Users\ederc\source\repos\resources\lib;C:\Users\maxim\source\repos\resources\lib;$(LibraryPath)</LibraryPath>
     <ExternalIncludePath>C:\Users\ederc\source\repos\resources\include;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
