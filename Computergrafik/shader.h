@@ -141,6 +141,15 @@ public:
 		if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
 			refresh();
 		// insert code here
+		if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
+			setInt("tex", 0.0f);
+			refresh();
+		}
+		
+		if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) {
+			setInt("tex", 1.0f);
+			refresh();
+		}
 	}
 };
 #endif
