@@ -14,7 +14,7 @@ void loadTexture(Shader ourShader) {
 
 	unsigned int texture[2];
 	int width, height, nrChannels;
-	glGenTextures(1, texture);
+	glGenTextures(2, texture);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
 
@@ -34,7 +34,7 @@ void loadTexture(Shader ourShader) {
 	else {
 		std::cout << "Error: Could not load texture" << std::endl;
 	}
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
 
 	float borderColor[] = { 0.0f, 0.0f, 0.0f, 1.0f };
@@ -70,10 +70,6 @@ void loadTexture(Shader ourShader) {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 	stbi_image_free(data);
-
-	ourShader.use();
-	glUniform1i(glGetUniformLocation(ourShader.ID, "texture0"), 0);
-	glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 1);
 
 
 }

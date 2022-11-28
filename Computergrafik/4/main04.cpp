@@ -37,6 +37,8 @@ int main()
 	while (!glfwWindowShouldClose(window)) {
 		// use Shader
 		ourShader.use();
+		ourShader.setInt("texture1", 0); // idk warum es hier funzt, aber in
+		ourShader.setInt("texture2", 1); // der loadTexture() hat es fehler verursacht
 		// process inputs and update uniforms
 		ourShader.processInput(window);
 		ourShader.refreshUnifroms();
