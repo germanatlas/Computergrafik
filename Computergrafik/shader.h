@@ -142,12 +142,12 @@ public:
 			refresh();
 		// insert code here
 		if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
-			setInt("tex", 0.0f);
+			std::cout << "FUCK THIS SHIT" << std::endl;
 			refresh();
 		}
 		
 		if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) {
-			setInt("tex", 1.0f);
+			std::cout << "I HATE MY LIFE" << std::endl;
 			refresh();
 		}
 	}
