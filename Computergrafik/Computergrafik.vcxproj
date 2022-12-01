@@ -20,10 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\resources\src\glad.c" />
-    <ClCompile Include="main04.cpp" />
+    <ClCompile Include="main05.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions04.h" />
+    <ClInclude Include="functions05.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>

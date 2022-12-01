@@ -18,12 +18,12 @@
     <ClCompile Include="..\..\resources\src\glad.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="main04.cpp">
+    <ClCompile Include="main05.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions04.h">
+    <ClInclude Include="functions05.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="shader.h">
