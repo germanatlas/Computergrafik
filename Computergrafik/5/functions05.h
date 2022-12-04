@@ -25,6 +25,10 @@ unsigned int indices[] = {
 
 void setTransformations(Shader ourShader) {
     //insert  code here
+    glm::mat4 mat = glm::mat4(1.0f);
+    mat = glm::rotate(mat, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+    mat = glm::scale(mat, glm::vec3(0.5, 0.5, 0.5));
+    ourShader.setMatrix("transform", mat);
 }
 
 void loadTexture( Shader ourShader) {

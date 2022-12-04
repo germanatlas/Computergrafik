@@ -6,10 +6,13 @@
  out vec3 ourColor; 
  out vec2 TexCoord;
 
+ uniform mat4 transform;
+ uniform int time;
+
  void main()
  {
  	 ourColor = aColor;
 	 TexCoord = vec2(aTexCoord.x, aTexCoord.y);
-	 gl_Position;
+	 gl_Position = transform * vec4(aPos, 1.0f);
 
  }

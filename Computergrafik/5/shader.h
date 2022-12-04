@@ -125,6 +125,12 @@ public:
 		glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
 	}
 
+	void setMatrix(const std::string& name, glm::mat4 matrix) const
+	{
+		unsigned int mID = glGetUniformLocation(ID, name.c_str());
+		glUniformMatrix4fv(mID, 1, GL_FALSE, glm::value_ptr(matrix));
+	}
+
 	void setVertexPath(const char* vertexPath) {
 		int len = strlen(vertexPath) + 1;
 		vertexPathShader = new char[len];
