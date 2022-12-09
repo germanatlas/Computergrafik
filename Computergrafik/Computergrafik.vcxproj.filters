@@ -18,5 +18,35 @@
     <ClCompile Include="..\..\resources\src\glad.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="main06.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="functions06.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fragment_shader.fs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="vertex_shader.vs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="texture1.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="texture2.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
   </ItemGroup>
 </Project>
