@@ -18,18 +18,21 @@
     <ClCompile Include="..\..\resources\src\glad.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="main06.cpp">
+    <ClCompile Include="main07.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions06.h">
+    <ClInclude Include="functions07.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="shader.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="stb_image.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
