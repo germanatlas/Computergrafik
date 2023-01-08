@@ -18,14 +18,11 @@
     <ClCompile Include="..\..\resources\src\glad.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="main07.cpp">
+    <ClCompile Include="main08.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions07.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="shader.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -35,12 +32,21 @@
     <ClInclude Include="camera.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="functions08.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragment_shader.fs">
       <Filter>Ressourcendateien</Filter>
     </None>
     <None Include="vertex_shader.vs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="light_cube.fs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="light_cube.vs">
       <Filter>Ressourcendateien</Filter>
     </None>
   </ItemGroup>

@@ -20,16 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\resources\src\glad.c" />
-    <ClCompile Include="main07.cpp" />
+    <ClCompile Include="main08.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
-    <ClInclude Include="functions07.h" />
+    <ClInclude Include="functions08.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fragment_shader.fs" />
+    <None Include="light_cube.fs" />
+    <None Include="light_cube.vs" />
     <None Include="vertex_shader.vs" />
   </ItemGroup>
   <ItemGroup>

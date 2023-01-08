@@ -8,6 +8,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp> 
 #include <glm/gtc/type_ptr.hpp>
+#include "camera.h"
 
 class Shader
 {
@@ -129,11 +130,6 @@ public:
 		unsigned int transformLoc = glGetUniformLocation(ID, name.c_str());
 		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(value));
 	}
-	void setVec3(const std::string& name, glm::vec3 value) const
-	{
-		unsigned int transformLoc = glGetUniformLocation(ID, name.c_str());
-		glUniform3fv(transformLoc, 1, glm::value_ptr(value));
-	}
 	void setVertexPath(const char* vertexPath) {
 		int len = strlen(vertexPath) + 1;
 		vertexPathShader = new char[len];
@@ -143,7 +139,6 @@ public:
 		int len = strlen(fragmentPath) + 1; fragmentPathShader = new char[len];
 		strcpy_s(fragmentPathShader, len, fragmentPath);
 	}
-	int shaderType = 1;
 	void refreshUnifroms() {
 		float time = glfwGetTime();
 		setFloat("time", time);
@@ -151,20 +146,51 @@ public:
 
 	int offset_X = 0;
 	int offset_Y = 0;
+	float deltaTime = 0.0f;
+	float lastFrame = 0.0f;
+	float velocity = 4.0f;
 	void processInput(GLFWwindow* window) {
 
-		setInt("shaderType", shaderType);
+		float cameraSpeed = velocity * deltaTime;
+		if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+			if (velocity >= 0.0f)	// just to be safe from negative velocity
+									// if you somehow managed to overflow
+									// it would simply put you back to 0
+				velocity += 1.0f * deltaTime;
+			else
+				velocity = 0.0f;
+		if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+			if (velocity > 0.0f)
+				velocity -= 1.0f * deltaTime;
+			else
+				velocity = 0.0f;
+
+		if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+			cameraPos += cameraSpeed * cameraFront;
+		if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+			cameraPos -= cameraSpeed * cameraFront;
+		if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+			cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+		if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+			cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+
+		if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+			if (fov > 0.5f) // as limit, could also be
+							// something like 1e-20 but then
+							// nothing would be recognizable
+				fov -= (-fov+91) * deltaTime;
+			else
+				fov = 0.5f; //to ensure limit, also without the else it jumps back to 90 fov
+		else
+			fov = 90.0f;
 		if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
 			refresh();
 		if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
-			shaderType = 1;
+			setInt("texSwitch", 0);
 		}
 		if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) {
-			shaderType = 2;
+			setInt("texSwitch", 1);
 		}
-
 	}
-
-
 };
 #endif
