@@ -16,12 +16,7 @@ private:
 public:
 	// the program ID
 	unsigned int ID;
-	Shader(const char* vertexPath, const char* fragmentPath) {
-	this->init(vertexPath, fragmentPath);
-	}
-	Shader(){
-		
-	}
+
 	// constructor reads and builds the shader
 	void refresh() {
 		glDeleteProgram(ID);
@@ -134,14 +129,10 @@ public:
 		unsigned int transformLoc = glGetUniformLocation(ID, name.c_str());
 		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(value));
 	}
-	void setVec3(const std::string& name, glm::vec3 &value) const
+	void setVec3(const std::string& name, glm::vec3 value) const
 	{
 		unsigned int transformLoc = glGetUniformLocation(ID, name.c_str());
-		glUniform3fv(transformLoc, 1, &value[0]);
-	}
-	void setVec3(const std::string& name, float x, float y, float z) const
-	{
-		glUniform3f(glGetUniformLocation(ID, name.c_str()), x, y, z);
+		glUniform3fv(transformLoc, 1, glm::value_ptr(value));
 	}
 	void setVertexPath(const char* vertexPath) {
 		int len = strlen(vertexPath) + 1;
@@ -152,6 +143,7 @@ public:
 		int len = strlen(fragmentPath) + 1; fragmentPathShader = new char[len];
 		strcpy_s(fragmentPathShader, len, fragmentPath);
 	}
+	int shaderType = 1;
 	void refreshUnifroms() {
 		float time = glfwGetTime();
 		setFloat("time", time);
@@ -161,8 +153,16 @@ public:
 	int offset_Y = 0;
 	void processInput(GLFWwindow* window) {
 
+		setInt("shaderType", shaderType);
 		if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
 			refresh();
+		if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
+			shaderType = 1;
+		}
+		if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) {
+			shaderType = 2;
+		}
+
 	}
 
 

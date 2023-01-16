@@ -20,11 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\resources\src\glad.c" />
-    <ClCompile Include="main08.cpp" />
+    <ClCompile Include="main09.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
-    <ClInclude Include="functions08.h" />
+    <ClInclude Include="functions09.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
@@ -35,8 +35,8 @@
     <None Include="vertex_shader.vs" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="texture1.png" />
-    <Image Include="texture2.png" />
+    <Image Include="container2.png" />
+    <Image Include="container2_specular.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

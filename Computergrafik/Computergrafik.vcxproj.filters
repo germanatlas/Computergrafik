@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\resources\src\glad.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="main08.cpp">
+    <ClCompile Include="main09.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,7 +32,7 @@
     <ClInclude Include="camera.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="functions08.h">
+    <ClInclude Include="functions09.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -51,10 +51,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="texture1.png">
+    <Image Include="container2.png">
       <Filter>Ressourcendateien</Filter>
     </Image>
-    <Image Include="texture2.png">
+    <Image Include="container2_specular.png">
       <Filter>Ressourcendateien</Filter>
     </Image>
   </ItemGroup>
