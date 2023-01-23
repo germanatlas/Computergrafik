@@ -6,7 +6,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include <vector>
-#include <GLFW/glfw3.h>
 
 // Default camera values
 const float YAW = -90.0f;
@@ -74,15 +73,14 @@ public:
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
             glfwSetWindowShouldClose(window, true);
 
-        //damit man nicht vom Flugzeug springen kann :D
-        /*if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
             Position += Front * velocity;
         if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
             Position -= Front * velocity;
         if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
             Position -= Right * velocity;
         if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-            Position += Right * velocity;*/
+            Position += Right * velocity;
 
         if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
             zoomSteps += 0.005;
