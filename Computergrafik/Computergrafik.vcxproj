@@ -20,15 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\resources\src\glad.c" />
-    <ClCompile Include="main10.cpp" />
+    <ClCompile Include="11\main11.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="functions10.h" />
-    <ClInclude Include="mesh.h" />
-    <ClInclude Include="model.h" />
-    <ClInclude Include="shader.h" />
-    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="11\camera.h" />
+    <ClInclude Include="11\functions11.h" />
+    <ClInclude Include="11\shader.h" />
+    <ClInclude Include="11\shader_transform.h" />
+    <ClInclude Include="11\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="11\fragment_shader.fs" />
+    <None Include="11\vertex_shader.vs" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

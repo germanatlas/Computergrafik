@@ -18,28 +18,29 @@
     <ClCompile Include="..\..\resources\src\glad.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="main10.cpp">
+    <ClCompile Include="11\main11.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stb_image.h">
+    <ClInclude Include="11\camera.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="shader.h">
+    <ClInclude Include="11\functions11.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="model.h">
+    <ClInclude Include="11\shader.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="mesh.h">
+    <ClInclude Include="11\stb_image.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="functions10.h">
+    <ClInclude Include="11\shader_transform.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="11\vertex_shader.vs" />
+    <None Include="11\fragment_shader.fs" />
   </ItemGroup>
 </Project>
